@@ -43,6 +43,16 @@ Contents
 .. |forthebadge| image:: https://forthebadge.com/images/badges/no-ragrets.svg
    :target: https://forthebadge.com
 
+Usage
+=====
+
+::
+
+	$ mkdir -p ~/dev
+	$ git clone https://github.com/chuahou/kiwami.git ~/dev/kiwami --recurse-submodules
+	$ cd ~/dev/kiwami
+	$ ./init.sh
+
 Previously
 ==========
 
