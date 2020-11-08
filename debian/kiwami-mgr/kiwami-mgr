@@ -16,7 +16,6 @@ usage() {
 
 # init option: install everything!
 if [[ "$1" == "init" ]]; then
-	sudo $SCRIPT_LOCATION/nordvpn/install.sh
 	$SCRIPT_LOCATION/zsh-plugins/install.sh
 	exit 0
 fi
