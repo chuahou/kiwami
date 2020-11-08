@@ -89,5 +89,8 @@ if [ ! -f init.stage.init.d ]; then
 	touch init.stage.init.d
 fi
 
+# enable ly
+sudo systemctl enable ly
+
 # delete stage files
 rm init.stage.*

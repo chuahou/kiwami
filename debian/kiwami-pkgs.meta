@@ -1,3 +1,9 @@
+# c3hou/packages
+fonts-iosevka
+fonts-iosevka-fixed
+fonts-ioslabka
+ly
+
 # Development
 build-essential
 cmake
