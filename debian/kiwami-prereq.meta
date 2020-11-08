@@ -1,4 +1,5 @@
 build-essential
-devscripts
 debhelper
+devscripts
 make
+quilt
