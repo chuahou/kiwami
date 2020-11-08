@@ -81,5 +81,13 @@ if [ ! -f init.stage.userdirs ]; then
 	touch init.stage.userdirs
 fi
 
+# run scripts in init.d/
+if [ ! -f init.stage.init.d ]; then
+	for script in init.d/*.sh; do
+		$script
+	done
+	touch init.stage.init.d
+fi
+
 # delete stage files
 rm init.stage.*

@@ -7,9 +7,6 @@ meld
 pdf2svg
 python3
 python3-venv
-
-# Haskell development tools
-hpack
 stylish-haskell
 
 # User programs
