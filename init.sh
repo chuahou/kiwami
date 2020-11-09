@@ -30,11 +30,11 @@ if [ ! -f init.stage.apt ]; then
 	touch init.stage.apt
 fi
 
-# install prerequisite package and prebuild packages
+# install prerequisite package
 # this depends on, and will trigger the install of, the dependencies needed to
 # build everything else
 if [ ! -f init.stage.prereq ]; then
-	sudo apt-get install ./binaries/*.deb -y
+	sudo apt-get install ./prereq.deb -y
 	touch init.stage.prereq
 fi
 
