@@ -7,6 +7,9 @@ kiwami
 A personal utility repository for (more or less) reproducible setups on
 Pop!_OS systems. Current version for Pop!_OS 20.04.
 
+Also depends on `chuahou/dpkgs <https://github.com/chuahou/dpkgs>`_
+hosted on `cloudsmith.io <https://cloudsmith.io/~c3hou/repos/dpkgs>`_.
+
 Contents
 ========
 
@@ -35,9 +38,8 @@ Contents
   <https://github.com/softmoth/zsh-vim-mode>`_ as a submodule for easy
   installation using symlinks in `rcfiles <rcfiles>`_
 
-* `binaries <binaries>`_: prebuilt binary packages. ``predep.deb`` must
-  be installed before we can build the debian folder, and the others are
-  binaries from other projects
+* `prereq.deb <prereq.deb>`_: prebuilt binary packages, must be
+  installed before we can build the debian folder
 
 * `init.sh <init.sh>`_: script that does *everything* for a fresh system
 
