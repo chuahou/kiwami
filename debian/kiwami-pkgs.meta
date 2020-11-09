@@ -1,8 +1,11 @@
-# c3hou/packages
+# dpkgs
+cpufreq-plugin
 fonts-iosevka
 fonts-iosevka-fixed
 fonts-ioslabka
 ly
+oomox-i3ch
+quickdep
 
 # Development
 build-essential
