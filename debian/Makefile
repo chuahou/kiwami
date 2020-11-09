@@ -28,7 +28,7 @@ SHELL := bash
 BUILD_DIR := build
 
 # List of packages to build
-PKGS := kiwami-pkgs kiwami-scripts kiwami-mgr teams-apt-source xinit-xsession
+PKGS := kiwami-pkgs kiwami-scripts teams-apt-source xinit-xsession
 
 # Dummy targets
 # Building dummy target involves building corresponding deb and installing it.
@@ -83,10 +83,6 @@ $(BUILD_DIR)/%.deb: %.meta
 .PRECIOUS: $(BUILD_DIR)/%.deb
 
 $(BUILD_DIR)/kiwami-scripts.deb: kiwami-scripts $(shell find kiwami-scripts -type f)
-	$(call build_pkg,$<)
-	$(call clean_aux)
-
-$(BUILD_DIR)/kiwami-mgr.deb: kiwami-mgr $(shell find kiwami-mgr -type f)
 	$(call build_pkg,$<)
 	$(call clean_aux)
 
