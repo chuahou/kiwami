@@ -16,9 +16,6 @@ Contents
 * `debian <debian>`_: a series of debian packages with tools /
   dependencies, that when installed, sets up the system I need.
 
-  * `kiwami-mgr <debian/kiwami-mgr>`_: a personal installation manager
-    that offers the ``kiwami-mgr`` binary, installing / uninstalling
-    some software not in standard apt sources
   * `kiwami-pkgs <debian/kiwami-pkgs>`_: a metapackage that depends on
     apt packages I want installed
   * `kiwami-scripts <debian/kiwami-scripts>`_: a collection of useful
@@ -41,7 +38,8 @@ Contents
 * `prereq.deb <prereq.deb>`_: prebuilt binary packages, must be
   installed before we can build the debian folder
 
-* `init.sh <init.sh>`_: script that does *everything* for a fresh system
+* `init.sh <init.sh>`_: script that does *everything* for a fresh
+  system, including running the scripts in `init.d <init.d>`_
 
 .. |forthebadge| image:: https://forthebadge.com/images/badges/no-ragrets.svg
    :target: https://forthebadge.com
