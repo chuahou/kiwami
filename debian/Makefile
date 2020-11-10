@@ -47,7 +47,7 @@ DUMMY_PPA := $(PPA_LIST:%=$(BUILD_DIR)/%.dummy)
 .PHONY: all clean cleanaux
 
 # Build all and install
-all: | $(BUILD_DIR) $(DUMMY_PPA) $(DUMMY_TGT) ../prereq.deb
+all: | $(BUILD_DIR) $(DUMMY_PPA) $(DUMMY_TGT) ../prereq.deb ../sources.deb
 
 # Clean up deb and auxiliary outputs
 clean: cleanaux
@@ -90,7 +90,14 @@ $(BUILD_DIR)/xinit-xsession.deb: xinit-xsession $(shell find xinit-xsession -typ
 	$(call build_pkg,$<)
 	$(call clean_aux)
 
+$(BUILD_DIR)/kiwami-apt-source.deb: kiwami-apt-source $(shell find kiwami-apt-source -type f)
+	$(call build_pkg,$<)
+	$(call clean_aux)
+
 ../prereq.deb: $(BUILD_DIR)/kiwami-prereq.deb
+	cp $< $@
+
+../sources.deb: $(BUILD_DIR)/kiwami-apt-source.deb
 	cp $< $@
 
 ###########################
