@@ -42,7 +42,6 @@ make -C debian
 # install snaps
 if [ ! -f init.stage.snaps ]; then
 	snap install spotify
-	snap install --classic heroku
 	touch init.stage.snaps
 fi
 
