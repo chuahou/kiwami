@@ -28,7 +28,7 @@ SHELL := bash
 BUILD_DIR := build
 
 # List of packages to build
-PKGS := kiwami-pkgs kiwami-scripts
+PKGS := kiwami-pkgs kiwami-scripts kiwami-apt-source kiwami-prereq
 
 # Dummy targets
 # Building dummy target involves building corresponding deb and installing it.
