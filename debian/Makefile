@@ -85,10 +85,12 @@ $(BUILD_DIR)/%.deb: %.meta
 $(BUILD_DIR)/kiwami-scripts.deb: kiwami-scripts $(shell find kiwami-scripts -type f)
 	$(call build_pkg,$<)
 	$(call clean_aux)
+	touch $@ # ensure package newer than folder
 
 $(BUILD_DIR)/kiwami-apt-source.deb: kiwami-apt-source $(shell find kiwami-apt-source -type f)
 	$(call build_pkg,$<)
 	$(call clean_aux)
+	touch $@ # ensure package newer than folder
 
 ../prereq/prereq.deb: $(BUILD_DIR)/kiwami-prereq.deb
 	mkdir -p ../prereq
