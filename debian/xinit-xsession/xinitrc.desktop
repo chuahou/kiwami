@@ -1,8 +1,0 @@
-# SPDX-License-Identifier: MIT
-# Copyright (c) 2020 Chua Hou
-
-[Desktop Entry]
-Name=Custom .xinitrc
-Exec=userxinitrc
-Type=Application
-DesktopNames=custom:xinitrc
