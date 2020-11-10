@@ -47,7 +47,7 @@ DUMMY_PPA := $(PPA_LIST:%=$(BUILD_DIR)/%.dummy)
 .PHONY: all clean cleanaux
 
 # Build all and install
-all: | $(BUILD_DIR) $(DUMMY_PPA) $(DUMMY_TGT) ../prereq.deb ../sources.deb
+all: | $(BUILD_DIR) $(DUMMY_PPA) $(DUMMY_TGT) ../prereq/prereq.deb ../prereq/sources.deb
 
 # Clean up deb and auxiliary outputs
 clean: cleanaux
@@ -90,10 +90,12 @@ $(BUILD_DIR)/kiwami-apt-source.deb: kiwami-apt-source $(shell find kiwami-apt-so
 	$(call build_pkg,$<)
 	$(call clean_aux)
 
-../prereq.deb: $(BUILD_DIR)/kiwami-prereq.deb
+../prereq/prereq.deb: $(BUILD_DIR)/kiwami-prereq.deb
+	mkdir -p ../prereq
 	cp $< $@
 
-../sources.deb: $(BUILD_DIR)/kiwami-apt-source.deb
+../prereq/sources.deb: $(BUILD_DIR)/kiwami-apt-source.deb
+	mkdir -p ../prereq
 	cp $< $@
 
 ###########################
