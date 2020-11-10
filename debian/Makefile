@@ -60,9 +60,8 @@ cleanaux:
 ########################
 
 $(BUILD_DIR)/%.deb: %.meta
-	grep -v '^\s*#' $< | sed '/^\s*$$/d' | \
-		xargs quickdep $$(sed 's/\.meta$$//' <<< $<)
-	mv $$(sed 's/\.meta$$//' <<< $<)*.deb $@
+	quickdep $<
+	mv $$(echo $< | sed 's/\.meta$$//')*.deb $@
 
 .PRECIOUS: $(BUILD_DIR)/%.deb
 
