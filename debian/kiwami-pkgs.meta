@@ -6,6 +6,7 @@ fonts-ioslabka
 ly
 oomox-i3ch
 quickdep
+xinit-xsession
 
 # Development
 build-essential
@@ -15,6 +16,7 @@ gitg
 meld
 pdf2svg
 python3
+python3-pip
 python3-venv
 stylish-haskell
 
@@ -109,3 +111,7 @@ ocaml-nox
 # school VPN
 network-manager-vpnc
 network-manager-vpnc-gnome
+
+# other sources
+nordvpn
+teams
