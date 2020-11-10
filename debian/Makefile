@@ -36,10 +36,6 @@ PKGS := kiwami-pkgs kiwami-scripts kiwami-apt-source kiwami-prereq
 # that are not outdated
 DUMMY_TGT := $(PKGS:%=$(BUILD_DIR)/%.dummy)
 
-# List of PPAs and its dummy target
-PPA_LIST  := ppa.list
-DUMMY_PPA := $(PPA_LIST:%=$(BUILD_DIR)/%.dummy)
-
 #######################
 ##### Phony rules #####
 #######################
@@ -47,7 +43,7 @@ DUMMY_PPA := $(PPA_LIST:%=$(BUILD_DIR)/%.dummy)
 .PHONY: all clean cleanaux
 
 # Build all and install
-all: | $(BUILD_DIR) $(DUMMY_PPA) $(DUMMY_TGT) ../prereq/prereq.deb ../prereq/sources.deb
+all: | $(BUILD_DIR) $(DUMMY_TGT) ../prereq/prereq.deb ../prereq/sources.deb
 
 # Clean up deb and auxiliary outputs
 clean: cleanaux
@@ -60,20 +56,6 @@ cleanaux:
 ########################
 ##### Manual rules #####
 ########################
-
-# Target to add PPAs listed in PPA_LIST
-$(DUMMY_PPA): $(PPA_LIST)
-	@echo "Adding PPAs listed in $<..."
-	@while read ppa; do \
-		grep -h "^deb.*$$ppa" /etc/apt/sources.list.d/* > /dev/null 2>&1; \
-		if [ $$? -ne 0 ]; then \
-			echo "Adding ppa:$$ppa"; \
-			sudo add-apt-repository -y "ppa:$$ppa"; \
-		else \
-			echo "ppa:$$ppa already added"; \
-		fi; \
-	done < $<
-	@touch $@
 
 $(BUILD_DIR)/%.deb: %.meta
 	grep -v '^\s*#' $< | sed '/^\s*$$/d' | \
