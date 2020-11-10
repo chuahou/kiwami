@@ -39,12 +39,6 @@ fi
 # install kiwami debian packages
 make -C debian
 
-# install snaps
-if [ ! -f init.stage.snaps ]; then
-	snap install spotify
-	touch init.stage.snaps
-fi
-
 # rcup rcfiles
 if [ ! -f init.stage.rcm ]; then
 	cp rcfiles/rcrc $HOME/.rcrc
