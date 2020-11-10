@@ -1,0 +1,13 @@
+Source:            kiwami-apt-source
+Maintainer:        Chua Hou <human+github@chuahou.dev>
+Section:           misc
+Priority:          optional
+Standards-Version: 3.9.2
+Build-Depends:     debhelper (>= 11)
+Homepage:          https://github.com/chuahou/kiwami
+
+Package:      kiwami-apt-source
+Architecture: any
+Depends:      ${shlibs:Depends}, ${misc:Depends}
+Description:  prerequisite apt sources for kiwami
+ Installs keys and sources required to install kiwami-pkgs.
