@@ -28,7 +28,7 @@ SHELL := bash
 BUILD_DIR := build
 
 # List of packages to build
-PKGS := kiwami-pkgs kiwami-scripts teams-apt-source xinit-xsession
+PKGS := kiwami-pkgs kiwami-scripts xinit-xsession
 
 # Dummy targets
 # Building dummy target involves building corresponding deb and installing it.
@@ -86,22 +86,12 @@ $(BUILD_DIR)/kiwami-scripts.deb: kiwami-scripts $(shell find kiwami-scripts -typ
 	$(call build_pkg,$<)
 	$(call clean_aux)
 
-$(BUILD_DIR)/teams-apt-source.deb: teams-apt-source $(shell find teams-apt-source -type f)
-	$(call build_pkg,$<)
-	$(call clean_aux)
-
 $(BUILD_DIR)/xinit-xsession.deb: xinit-xsession $(shell find xinit-xsession -type f)
 	$(call build_pkg,$<)
 	$(call clean_aux)
 
 ../prereq.deb: $(BUILD_DIR)/kiwami-prereq.deb
 	cp $< $@
-
-$(BUILD_DIR)/teams-apt-source.dummy: $(BUILD_DIR)/teams-apt-source.deb
-	sudo dpkg -i $< || sudo apt-get install -fy
-	sudo apt-get update
-	sudo apt-get install teams -y
-	touch $@
 
 ###########################
 ##### Automated rules #####
