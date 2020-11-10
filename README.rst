@@ -16,13 +16,12 @@ Contents
 * `debian <debian>`_: a series of debian packages with tools /
   dependencies, that when installed, sets up the system I need.
 
-  * `kiwami-pkgs <debian/kiwami-pkgs>`_: a metapackage that depends on
+  * `kiwami-pkgs <debian/kiwami-pkgs.meta>`_: a metapackage that depends on
     apt packages I want installed
   * `kiwami-scripts <debian/kiwami-scripts>`_: a collection of useful
     scripts
-  * `xinit-xsession <debian/xinit-xsession>`_: a simple package
-    containing a script and desktop file to run ``$HOME/.xinitrc`` from
-    a display manager
+  * `kiwami-apt-source <debian/kiwami-apt-source>`_: package list and
+    GPG keys for additional APT sources
 
 * `other <other>`_: miscellanous files
 
@@ -32,8 +31,8 @@ Contents
   <https://github.com/softmoth/zsh-vim-mode>`_ as a submodule for easy
   installation using symlinks in `rcfiles <rcfiles>`_
 
-* `prereq.deb <prereq.deb>`_: prebuilt binary packages, must be
-  installed before we can build the debian folder
+* `prereq <prereq>`_: prebuilt binary packages, must be installed before
+  we can build the debian folder
 
 * `init.sh <init.sh>`_: script that does *everything* for a fresh
   system, including running the scripts in `init.d <init.d>`_
