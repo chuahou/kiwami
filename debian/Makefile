@@ -21,14 +21,16 @@ endef
 ##### Configuration #####
 #########################
 
-# We use bash features in some of our rules' loops
-SHELL := bash
-
 # Build directory
 BUILD_DIR := build
 
+# Prereq packages to be copied to prereq directory
+PREREQ_DIR  := ../prereq
+PREREQ_PKGS := kiwami-apt-source kiwami-prereq
+PREREQ_DEBS := $(PREREQ_PKGS:%=$(PREREQ_DIR)/%.deb)
+
 # List of packages to build
-PKGS := kiwami-pkgs kiwami-scripts kiwami-apt-source kiwami-prereq
+PKGS := kiwami-pkgs kiwami-scripts $(PREREQ_PKGS)
 
 # Dummy targets
 # Building dummy target involves building corresponding deb and installing it.
@@ -43,7 +45,7 @@ DUMMY_TGT := $(PKGS:%=$(BUILD_DIR)/%.dummy)
 .PHONY: all clean cleanaux
 
 # Build all and install
-all: | $(BUILD_DIR) $(DUMMY_TGT) ../prereq/prereq.deb ../prereq/sources.deb
+all: | $(BUILD_DIR) $(DUMMY_TGT) $(PREREQ_DEBS)
 
 # Clean up deb and auxiliary outputs
 clean: cleanaux
@@ -74,14 +76,6 @@ $(BUILD_DIR)/kiwami-apt-source.deb: kiwami-apt-source $(shell find kiwami-apt-so
 	$(call clean_aux)
 	touch $@ # ensure package newer than folder
 
-../prereq/prereq.deb: $(BUILD_DIR)/kiwami-prereq.deb
-	mkdir -p ../prereq
-	cp $< $@
-
-../prereq/sources.deb: $(BUILD_DIR)/kiwami-apt-source.deb
-	mkdir -p ../prereq
-	cp $< $@
-
 ###########################
 ##### Automated rules #####
 ###########################
@@ -90,5 +84,8 @@ $(BUILD_DIR)/kiwami-apt-source.deb: kiwami-apt-source $(shell find kiwami-apt-so
 	sudo apt-get install -y ./$<
 	touch $@
 
-$(BUILD_DIR):
+$(PREREQ_DIR)/%.deb: $(BUILD_DIR)/%.deb $(PREREQ_DIR)
+	cp $< $@
+
+$(BUILD_DIR) $(PREREQ_DIR):
 	mkdir -p $@
