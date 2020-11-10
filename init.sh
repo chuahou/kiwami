@@ -23,9 +23,6 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 # add self to video group to control backlight
 sudo usermod -a -G video $USER
 
-# ask for dpkgs repository
-read -p "Have you added the dpkgs repo yet? If not, <C-c> and do so first."
-
 # update and upgrade apt packages
 if [ ! -f init.stage.apt ]; then
 	sudo apt-get update
@@ -33,22 +30,14 @@ if [ ! -f init.stage.apt ]; then
 	touch init.stage.apt
 fi
 
-# install prerequisite package
-# this depends on, and will trigger the install of, the dependencies needed to
-# build everything else
+# install prerequisite packages
 if [ ! -f init.stage.prereq ]; then
-	sudo apt-get install ./prereq.deb -y
+	sudo apt-get install ./prereq/*.deb -y
 	touch init.stage.prereq
 fi
 
 # install kiwami debian packages
 make -C debian
-
-# install kiwami-mgr packages
-if [ ! -f init.stage.kiwami-mgr ]; then
-	kiwami-mgr init
-	touch init.stage.kiwami-mgr
-fi
 
 # install snaps
 if [ ! -f init.stage.snaps ]; then
