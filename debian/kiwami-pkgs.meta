@@ -60,6 +60,7 @@ blueman
 curl
 cpufrequtils
 gawk
+gufw
 hplip
 libnotify-bin
 lm-sensors
