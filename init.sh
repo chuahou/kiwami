@@ -74,8 +74,9 @@ if [ ! -f init.stage.init.d ]; then
 	touch init.stage.init.d
 fi
 
-# enable ly
+# enable ly and ufw
 sudo systemctl enable ly
+sudo ufw enable
 
 # delete stage files
 rm init.stage.*
