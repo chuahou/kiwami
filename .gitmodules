@@ -4,3 +4,7 @@
 [submodule "zsh-vim-mode"]
 	path = zsh-vim-mode
 	url = https://github.com/softmoth/zsh-vim-mode.git
+[submodule "zsh-autosuggestions"]
+	path = zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+	branch = master
