@@ -10,36 +10,6 @@ Pop!_OS systems. Current version for Pop!_OS 20.04.
 Also depends on `chuahou/dpkgs <https://github.com/chuahou/dpkgs>`_
 hosted on `cloudsmith.io <https://cloudsmith.io/~c3hou/repos/dpkgs>`_.
 
-Contents
-========
-
-* `debian <debian>`_: a series of debian packages with tools /
-  dependencies, that when installed, sets up the system I need.
-
-  * `kiwami-pkgs <debian/kiwami-pkgs.meta>`_: a metapackage that depends on
-    apt packages I want installed
-  * `kiwami-scripts <debian/kiwami-scripts>`_: a collection of useful
-    scripts
-  * `kiwami-apt-source <debian/kiwami-apt-source>`_: package list and
-    GPG keys for additional APT sources
-
-* `other <other>`_: miscellanous files
-
-* rcfiles: see `rcfiles repo <https://github.com/chuahou/rcfiles>`_
-
-* `zsh-vim-mode <zsh-vim-mode>`_: `this plugin
-  <https://github.com/softmoth/zsh-vim-mode>`_ as a submodule for easy
-  installation using symlinks in `rcfiles <rcfiles>`_
-
-* `prereq <prereq>`_: prebuilt binary packages, must be installed before
-  we can build the debian folder
-
-* `init.sh <init.sh>`_: script that does *everything* for a fresh
-  system, including running the scripts in `init.d <init.d>`_
-
-.. |forthebadge| image:: https://forthebadge.com/images/badges/no-ragrets.svg
-   :target: https://forthebadge.com
-
 Usage
 =====
 
@@ -67,3 +37,6 @@ but me uses it.
 If something has gone very wrong, and the old history needs to be
 accessed, see `ch-graveyard/kiwami-archive
 <https://github.com/ch-graveyard/kiwami-archive>`_.
+
+.. |forthebadge| image:: https://forthebadge.com/images/badges/no-ragrets.svg
+   :target: https://forthebadge.com
