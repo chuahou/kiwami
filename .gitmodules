@@ -1,13 +1,12 @@
 [submodule "rcfiles"]
 	path = rcfiles
-	url = https://github.com/chuahou/rcfiles
+	url = https://github.com/chuahou/rcfiles.git
 [submodule "zsh-vim-mode"]
-	path = zsh-vim-mode
+	path = submod/zsh-vim-mode
 	url = https://github.com/softmoth/zsh-vim-mode.git
 [submodule "zsh-autosuggestions"]
-	path = zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-	branch = master
+	path = submod/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "evil-mode"]
-	path = evil-mode
+	path = submod/evil-mode
 	url = https://github.com/emacs-evil/evil.git
