@@ -8,3 +8,6 @@
 	path = zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 	branch = master
+[submodule "evil-mode"]
+	path = evil-mode
+	url = https://github.com/emacs-evil/evil.git
