@@ -111,6 +111,8 @@ openjdk-8-jdk
 
 # Ocaml for compilers
 ocaml-nox
+qemu-user
+gcc-arm-linux-gnueabihf
 
 # school VPN
 network-manager-vpnc
