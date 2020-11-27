@@ -10,3 +10,6 @@
 [submodule "evil-mode"]
 	path = submod/evil-mode
 	url = https://github.com/emacs-evil/evil.git
+[submodule "submod/goto-chg"]
+	path = submod/goto-chg
+	url = https://github.com/emacs-evil/goto-chg.git
