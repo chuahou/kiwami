@@ -16,8 +16,10 @@ Usage
 ::
 
 	$ mkdir -p ~/dev
-	$ git clone https://github.com/chuahou/kiwami.git ~/dev/kiwami --recurse-submodules
+	$ git clone git@github.com:chuahou/kiwami ~/dev/kiwami --shallow-since=2020-11-10
 	$ cd ~/dev/kiwami
+	$ git submodule init
+	$ git submodule update --depth 1
 	$ ./init.sh
 
 Previously
