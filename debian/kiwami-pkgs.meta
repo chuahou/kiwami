@@ -23,7 +23,7 @@ stylish-haskell
 # User programs
 alacritty
 discord
-emacs
+emacs-nox
 flameshot
 gimp
 gparted
