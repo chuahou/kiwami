@@ -20,8 +20,9 @@ exec 2> >(tee -a "$ERR_FILE")
 # use Windows clock system
 timedatectl set-local-rtc 1 --adjust-system-clock
 
-# add self to video group to control backlight
-sudo usermod -a -G video $USER
+# add self to hardware groups
+sudo usermod -a -G video $USER   # backlight control
+sudo usermod -a -G lpadmin $USER # printer administration
 
 # update and upgrade apt packages
 if [ ! -f init.stage.apt ]; then
