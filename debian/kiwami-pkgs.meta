@@ -87,12 +87,6 @@ btrfs-progs
 nodejs
 npm
 
-# For haskell-language-server
-libicu-dev
-libncurses-dev
-libgmp-dev
-zlib1g-dev
-
 # vanilla rice
 arandr
 dunst
