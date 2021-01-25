@@ -4,6 +4,8 @@ kiwami
 
 |forthebadge|
 
+**Succeeded by** `NixOS configuration <https://github.com/chuahou/conf.nix>`_.
+
 A personal utility repository for (more or less) reproducible setups on
 Pop!_OS systems. Current version for Pop!_OS 20.04.
 
